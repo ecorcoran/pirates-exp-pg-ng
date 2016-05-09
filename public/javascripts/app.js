@@ -1,4 +1,9 @@
-angular.module('pirates', [])
+angular.module('pirates', ['ngRoute'])
 .controller('PiratesController', function ($scope) {
-  $scope.testing123 = 1+3
+})
+.config(function ($routeProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: 'views/pirates.html',
+    })
 })
