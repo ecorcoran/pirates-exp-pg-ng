@@ -1,1 +1,12 @@
 <h1>Pirates</h1>
+
+<div class="row well" ng-repeat="pirate in pirates">
+  <div class="col-md-4">
+    <img class="img-responsive" ng-src="{{pirate.image_url}}" alt="{{pirate.name}}" />
+  </div>
+  <div class="col-md-8">
+    <h2 ng-bind="pirate.name"></h2>
+    <h3>Poison: <span ng-bind="pirate.poison"></span></h3>
+    <h3>Accessory: <span ng-bind="pirate.accessory"></span></h3>
+  </div>
+</div>
