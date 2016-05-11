@@ -1,5 +1,42 @@
-<h1>Pirates</h1>
-
+<div class="page-header">
+  <div class="pull-right">
+    <input ng-click="toggleForm()" class="btn btn-success" type="button" name="name" value="New Pirate">
+  </div>
+  <h1>Pirates</h1>
+</div>
+<div class="row well" ng-show="showForm">
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label for="name" class="col-sm-2 control-label">Pirate Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" ng-model="pirate.name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="poison" class="col-sm-2 control-label">Poison</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="poison" ng-model="pirate.poison">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="accessory" class="col-sm-2 control-label">Accessory</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="accessory" ng-model="pirate.accessory">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="image_url" class="col-sm-2 control-label">Image URL</label>
+      <div class="col-sm-10">
+        <input type="url" class="form-control" id="image_url" ng-model="pirate.image_url">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success" ng-click="addPirate()">Add this Pirate, matey!</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="row well" ng-repeat="pirate in pirates">
   <div class="col-md-4">
     <img class="img-responsive" ng-src="{{pirate.image_url}}" alt="{{pirate.name}}" />
