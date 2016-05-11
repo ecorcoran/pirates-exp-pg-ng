@@ -8,11 +8,11 @@ app.controller('PiratesController', function ($scope, PiratesService) {
   $scope.toggleForm = function () {
     $scope.showForm = !$scope.showForm;
   };
-  $scope.pirate = {};
+  $scope.newPirate = {};
   $scope.addPirate = function () {
-    PiratesService.create($scope.pirate).then(function (res) {
+    PiratesService.create($scope.newPirate).then(function (res) {
       $scope.pirates.push(res.data);
-      $scope.pirate = {};
+      $scope.newPirate = {};
       $scope.showForm = false;
     });
   }
