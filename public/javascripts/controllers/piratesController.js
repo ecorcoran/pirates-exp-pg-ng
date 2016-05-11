@@ -16,4 +16,11 @@ app.controller('PiratesController', function ($scope, PiratesService) {
       $scope.showForm = false;
     });
   }
+  $scope.deletePirate = function (pirateToDelete) {
+    PiratesService.delete(pirateToDelete).then(function (res) {
+      $scope.pirates = $scope.pirates.filter(function(pirate) {
+        return pirate.id !== pirateToDelete.id
+      })
+    })
+  }
 });

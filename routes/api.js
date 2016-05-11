@@ -22,4 +22,10 @@ router.post('/pirates', function(req, res, next) {
   })
 });
 
+router.delete('/pirates/:id', function(req, res, next) {
+  knex('pirates').where('id', req.params.id).del().then(function(numDeleted) {
+    res.json(numDeleted)
+  })
+});
+
 module.exports = router;

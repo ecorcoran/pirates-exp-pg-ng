@@ -42,7 +42,12 @@
     <img class="img-responsive" ng-src="{{pirate.image_url}}" alt="{{pirate.name}}" />
   </div>
   <div class="col-md-8">
-    <h2 ng-bind="pirate.name"></h2>
+    <div class="page-header">
+      <div class="pull-right">
+        <input ng-click="deletePirate(pirate)" class="btn btn-danger" type="button" name="name" value="Walk the Plank">
+      </div>
+      <h2 ng-bind="pirate.name"></h2>
+    </div>
     <h3>Poison: <span ng-bind="pirate.poison"></span></h3>
     <h3>Accessory: <span ng-bind="pirate.accessory"></span></h3>
   </div>

@@ -7,6 +7,9 @@ app.factory('PiratesService', function ($http) {
     },
     create: function(pirate) {
       return $http.post('/api/pirates', pirate)
+    },
+    delete: function(pirate) {
+      return $http.delete('/api/pirates/' + pirate.id)
     }
   }
 })
