@@ -8,4 +8,18 @@ router.get('/pirates', function(req, res, next) {
   })
 });
 
+router.post('/pirates', function(req, res, next) {
+  var pirate = {
+    name: req.body.name,
+    poison: req.body.poison,
+    accessory: req.body.accessory,
+    image_url: req.body.image_url,
+    created_at: new Date(),
+    updated_at: new Date(),
+  }
+  knex('pirates').insert(pirate).returning('*').then(function (pirates) {
+    res.json(pirates[0]);
+  })
+});
+
 module.exports = router;

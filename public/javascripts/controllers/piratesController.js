@@ -10,6 +10,10 @@ app.controller('PiratesController', function ($scope, PiratesService) {
   };
   $scope.pirate = {};
   $scope.addPirate = function () {
-    console.log($scope.pirate);
+    PiratesService.create($scope.pirate).then(function (res) {
+      $scope.pirates.push(res.data);
+      $scope.pirate = {};
+      $scope.showForm = false;
+    });
   }
 });
